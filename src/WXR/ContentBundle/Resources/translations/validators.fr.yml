@@ -1,0 +1,5 @@
+wxr_content:
+    content:
+        name:
+            blank: Veuillez entrer un nom
+            already_used: Ce nom existe déjà

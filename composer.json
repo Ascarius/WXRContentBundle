@@ -1,0 +1,32 @@
+{
+    "name": "wxr/content-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony WXRContentBundle",
+    "keywords": [ "wxr", "content" ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lionel Gaillard",
+            "email": "lionel.gaillard@wxrstudios.com",
+            "homepage": "http://wxrstudios.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "2.1.*"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-0": {
+            "WXR\\Content": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+parameters:
+    wxr_content.content.class: WXR\ContentBundle\Entity\Content
+
+services:
+
+    wxr_content.content.manager:
+        class: WXR\ContentBundle\Entity\ContentManager
+        arguments: [@doctrine.orm.entity_manager, %wxr_content.content.class%]
+
+    wxr_content.content.form:
+        factory_service: form.factory
+        factory_method: create
+        class: Symfony\Component\Form\Form
+        arguments: [ @wxr_content.content.form.type ]
+
+    wxr_content.content.form.type:
+        class: WXR\ContentBundle\Form\Type\ContentType
+        arguments: [ %wxr_content.content.class% ]
+
+    wxr_content.content.form.handler:
+        class: WXR\ContentBundle\Form\Handler\ContentHandler
+        scope: request
+        arguments: [ @request, @wxr_content.content.form, @wxr_content.content.manager ]

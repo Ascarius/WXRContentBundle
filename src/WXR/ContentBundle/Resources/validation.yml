@@ -1,0 +1,9 @@
+namespaces:
+    ORM: Symfony\Bridge\Doctrine\Validator\Constraints\
+
+WXR\ContentBundle\Entity\Content:
+    constraints:
+        - "ORM:UniqueEntity": { fields: name, message: wxr_content.content.name.already_used }
+    proterties:
+        name:
+            - NotBlank: { message: wxr_content.content.name.blank }
