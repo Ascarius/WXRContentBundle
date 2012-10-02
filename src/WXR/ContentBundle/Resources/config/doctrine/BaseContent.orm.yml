@@ -9,5 +9,5 @@ WXR\ContentBundle\Entity\Content:
         title:
             type: string
             length: 255
-        description:
-            type: content
+        content:
+            type: text
