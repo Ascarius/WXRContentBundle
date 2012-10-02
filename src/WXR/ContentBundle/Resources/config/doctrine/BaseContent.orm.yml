@@ -1,0 +1,13 @@
+WXR\ContentBundle\Entity\Content:
+    type: mappedSuperClass
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+        title:
+            type: string
+            length: 255
+        description:
+            type: content

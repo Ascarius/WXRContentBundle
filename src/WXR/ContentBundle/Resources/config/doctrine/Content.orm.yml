@@ -6,13 +6,3 @@ WXR\ContentBundle\Entity\Content:
             id: true
             generator:
                 strategy: AUTO
-        name:
-            type: string
-            length: 255
-        description:
-            type: text
-        title:
-            type: string
-            length: 255
-        description:
-            type: content
