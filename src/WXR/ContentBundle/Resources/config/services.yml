@@ -1,4 +1,5 @@
 parameters:
+
     wxr_content.content.class: WXR\ContentBundle\Entity\Content
 
 services:

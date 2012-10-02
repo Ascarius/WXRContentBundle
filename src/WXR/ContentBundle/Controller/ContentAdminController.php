@@ -5,7 +5,7 @@ namespace WXR\Bundle\ContentBundle\Controller;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class AdminContentController extends Controller
+class ContentAdminController extends Controller
 {
     public function listAction()
     {
