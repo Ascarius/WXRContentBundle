@@ -1,6 +1,6 @@
 <?php
 
-namespace WXR\CategoryBundle;
+namespace WXR\ContentBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
