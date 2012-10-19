@@ -35,6 +35,7 @@ services:
             -
                 name: sonata.admin
                 manager_type: orm
+                group: wxr_content
                 label: contents
                 label_catalogue: %wxr_content.translation_domain%
                 label_translator_strategy: sonata.admin.label.strategy.underscore

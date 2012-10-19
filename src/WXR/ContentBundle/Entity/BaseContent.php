@@ -2,6 +2,6 @@
 
 namespace WXR\ContentBundle\Entity;
 
-class BaseContent extends WXR\ContentBundle\Model\Content
+class BaseContent extends \WXR\ContentBundle\Model\Content
 {
 }
