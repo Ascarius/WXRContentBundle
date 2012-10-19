@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-0": {
-            "WXR\\ContentBundle": "src/"
+            "WXR\\ContentBundle": "src"
         }
     },
     "minimum-stability": "dev",
