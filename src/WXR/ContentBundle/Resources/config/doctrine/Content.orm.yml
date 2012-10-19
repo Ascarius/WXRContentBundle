@@ -1,5 +1,6 @@
 WXR\ContentBundle\Entity\Content:
     type: entity
+    table: wxr_content_content
     fields:
         id:
             type: integer

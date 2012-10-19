@@ -1,0 +1,27 @@
+contents: Contenus
+
+breadcrumb:
+
+    link_content_list: Liste des contenus
+    link_content_create: Créer un contenu
+    link_content_edit: Editer un contenu
+    link_content_delete: Supprimer un contenu
+
+list:
+
+    label_name: Nom
+    label_description: Description
+
+filter:
+
+    label_name: Nom
+    label_description: Description
+    label_title: Titre
+    label_content: Contenu
+
+form:
+
+    label_name: Nom
+    label_description: Description
+    label_title: Titre
+    label_content: Contenu

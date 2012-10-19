@@ -1,6 +1,9 @@
 parameters:
 
     wxr_content.content.class: WXR\ContentBundle\Entity\Content
+    wxr_content.content.admin.class: WXR\ContentBundle\Admin\Entity\ContentAdmin
+
+    wxr_content.translation_domain: WXRContentBundle
 
 services:
 
@@ -22,3 +25,16 @@ services:
         class: WXR\ContentBundle\Form\Handler\ContentHandler
         scope: request
         arguments: [ @request, @wxr_content.content.form, @wxr_content.content.manager ]
+
+    wxr_content.content.admin:
+        class: %wxr_content.content.admin.class%
+        arguments: [ ~, %wxr_content.content.class%, SonataAdminBundle:CRUD ]
+        calls:
+            - [ setTranslationDomain, [ %wxr_content.translation_domain% ] ]
+        tags:
+            -
+                name: sonata.admin
+                manager_type: orm
+                label: contents
+                label_catalogue: %wxr_content.translation_domain%
+                label_translator_strategy: sonata.admin.label.strategy.underscore

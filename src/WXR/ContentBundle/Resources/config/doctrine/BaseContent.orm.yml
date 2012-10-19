@@ -1,5 +1,5 @@
 WXR\ContentBundle\Entity\BaseContent:
-    type: mappedSuperClass
+    type: mappedSuperclass
     fields:
         name:
             type: string
