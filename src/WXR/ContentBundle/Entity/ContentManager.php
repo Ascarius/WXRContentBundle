@@ -4,6 +4,7 @@ namespace WXR\ContentBundle\Entity;
 
 use WXR\CommonBundle\Entity\BaseManager;
 use WXR\ContentBundle\Model\ContentManagerInterface;
+use WXR\ContentBundle\Model\ContentInterface;
 
 class ContentManager extends BaseManager implements ContentManagerInterface
 {
@@ -18,7 +19,7 @@ class ContentManager extends BaseManager implements ContentManagerInterface
     /**
      * {@inheritDoc}
      */
-    public function persistFromData($data)
+    public function persistFromData(array $data)
     {
         if (!$data) {
             return;
