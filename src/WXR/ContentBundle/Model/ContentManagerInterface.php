@@ -2,7 +2,9 @@
 
 namespace WXR\ContentBundle\Model;
 
-interface ContentManagerInterface extends WXR\CommonBundle\Model\BaseManagerInterface
+use WXR\CommonBundle\Model\BaseManagerInterface;
+
+interface ContentManagerInterface extends BaseManagerInterface
 {
     /**
      * @param string $name
