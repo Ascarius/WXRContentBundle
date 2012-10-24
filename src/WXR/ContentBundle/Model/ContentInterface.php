@@ -21,4 +21,6 @@ interface ContentInterface
     public function setContent($content);
 
     public function getContent();
+
+    public function __toString();
 }

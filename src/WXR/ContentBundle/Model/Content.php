@@ -108,4 +108,12 @@ abstract class Content implements ContentInterface
     {
         return $this->content;
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
