@@ -11,7 +11,7 @@ class ContentManager extends BaseManager implements ContentManagerInterface
     /**
      * {@inheritDoc}
      */
-    public function getOneByName($name)
+    public function findOneByName($name)
     {
         return $this->findOneBy(array('name' => $name));
     }
@@ -32,7 +32,7 @@ class ContentManager extends BaseManager implements ContentManagerInterface
                 throw new \InvalidArgumentException('Data values require "name" key');
             }
 
-            $content = $this->getOneByName($values['name']);
+            $content = $this->findOneByName($values['name']);
 
             if (null === $content) {
                 $content = $this->create();

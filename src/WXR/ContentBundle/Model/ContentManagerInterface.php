@@ -10,7 +10,7 @@ interface ContentManagerInterface extends BaseManagerInterface
      * @param string $name
      * @return ContentInterface|null
      */
-    public function getOneByName($name);
+    public function findOneByName($name);
 
     /**
      * Persist contents from array data
