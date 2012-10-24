@@ -52,7 +52,7 @@ abstract class Content implements ContentInterface
      */
     public function getName()
     {
-        return $this;
+        return $this->name;
     }
 
     /**
