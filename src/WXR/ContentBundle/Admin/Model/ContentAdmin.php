@@ -19,7 +19,7 @@ abstract class ContentAdmin extends Admin
             ->add('name')
             ->add('description', null, array('required' => false))
             ->add('title', null, array('required' => false))
-            ->add('content', null, array('required' => false))
+            ->add('content', null, array('required' => false, 'class' => 'wysiwyg'))
         ;
     }
 
