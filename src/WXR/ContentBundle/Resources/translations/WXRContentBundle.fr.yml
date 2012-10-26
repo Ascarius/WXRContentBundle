@@ -3,10 +3,10 @@ contents: Contenus
 
 breadcrumb:
 
-    link_content_list: Liste des contenus
-    link_content_create: Créer un contenu
-    link_content_edit: Editer un contenu
-    link_content_delete: Supprimer un contenu
+    link_content_list: Contenus
+    link_content_create: Ajouter
+    link_content_edit: Editer
+    link_content_delete: Supprimer
 
 list:
 
