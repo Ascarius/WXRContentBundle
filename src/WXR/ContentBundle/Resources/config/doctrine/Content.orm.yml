@@ -7,3 +7,6 @@ WXR\ContentBundle\Entity\Content:
             id: true
             generator:
                 strategy: AUTO
+    uniqueConstraints:
+        UNIQ_name:
+            columns: [ name ]
