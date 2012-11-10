@@ -35,19 +35,19 @@ Display contents where "example" is content's name, tag's name or tag's slug:
 Display content by content's name:
 
 ``` twig
-{{ wxr_content_render({ name: "content_name" }) }}
+{{ wxr_content_render({ name: content_name }) }}
 ```
 
 Display contents by tag's name:
 
 ``` twig
-{{ wxr_content_render({ "tag.name": "content_name" }) }}
+{{ wxr_content_render({ "tag.name": tag_name }) }}
 ```
 
 Display contents by tag's slug:
 
 ``` twig
-{{ wxr_content_render({ "tag.slug": "content_name" }) }}
+{{ wxr_content_render({ "tag.slug": tag_slug }) }}
 ```
 
 Display content or array of contents:
