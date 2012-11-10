@@ -21,7 +21,7 @@
 {% if contents is not empty %}
 {% if contents is iterable %}
 {% if 1 == contents|length %}
-{{ _self.item(contents) }}
+{{ _self.item(contents[0]) }}
 {% else %}
 {{ _self.list(contents) }}
 {% endif %}

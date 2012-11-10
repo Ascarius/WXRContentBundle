@@ -9,7 +9,6 @@ parameters:
     wxr_content.translation_domain: WXRContentBundle
 
     wxr_content.twig.extension.class: WXR\ContentBundle\Twig\ContentExtension
-    wxr_content.twig.extension.default_template: WXRContentBundle::contents.html.twig
 
 services:
 
