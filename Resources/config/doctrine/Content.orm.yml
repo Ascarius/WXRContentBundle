@@ -14,7 +14,7 @@ WXR\ContentBundle\Entity\Content:
         tags:
             targetEntity: WXR\ContentBundle\Entity\Tag
             joinTable:
-                name: wxr_content_tags
+                name: wxr_content_content_tags
                 joinColumns:
                   content_id:
                     referencedColumnName: id
