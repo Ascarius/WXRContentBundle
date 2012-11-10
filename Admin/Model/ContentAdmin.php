@@ -16,13 +16,23 @@ abstract class ContentAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name')
-            ->add('description', null, array('required' => false))
-            ->add('title', null, array('required' => false))
-            ->add('content', null, array(
-                'required' => false,
-                'attr' => array('data-wysiwyg' => true, 'rows' => 10)
-            ))
+            ->with('form.group_general')
+                ->add('name')
+                ->add('description', null, array('required' => false))
+                ->add('title', null, array('required' => false))
+                ->add('content', null, array(
+                    'required' => false,
+                    'attr' => array('data-wysiwyg' => true, 'rows' => 10)
+                ))
+            ->end()
+            ->with('form.group_tags')
+                ->add('tags', 'sonata_type_model', array(
+                    'class' => 'WXR\\ContentBundle\\Entity\\Tag',
+                    'multiple' => true,
+                    'expanded' => true,
+                    'required' => false
+                ))
+            ->end()
         ;
     }
 
@@ -36,6 +46,7 @@ abstract class ContentAdmin extends Admin
             ->add('description')
             ->add('title')
             ->add('content')
+            ->add('tags')
         ;
     }
 
@@ -47,6 +58,7 @@ abstract class ContentAdmin extends Admin
         $listMapper
             ->addIdentifier('name')
             ->add('description')
+            ->add('tags')
         ;
     }
 }

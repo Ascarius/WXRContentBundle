@@ -3,29 +3,19 @@ parameters:
     wxr_content.content.class: WXR\ContentBundle\Entity\Content
     wxr_content.content.admin.class: WXR\ContentBundle\Admin\Entity\ContentAdmin
 
+    wxr_content.tag.class: WXR\ContentBundle\Entity\Tag
+    wxr_content.tag.admin.class: WXR\ContentBundle\Admin\Entity\TagAdmin
+
     wxr_content.translation_domain: WXRContentBundle
+
+    wxr_content.twig.extension.class: WXR\ContentBundle\Twig\ContentExtension
+    wxr_content.twig.extension.default_template: WXRContentBundle::contents.html.twig
 
 services:
 
     wxr_content.content.manager:
         class: WXR\ContentBundle\Entity\ContentManager
         arguments: [@doctrine.orm.entity_manager, %wxr_content.content.class%]
-
-    wxr_content.content.form:
-        factory_service: form.factory
-        factory_method: create
-        class: Symfony\Component\Form\Form
-        arguments: [ @wxr_content.content.form.type ]
-
-    wxr_content.content.form.type:
-        class: WXR\ContentBundle\Form\Type\ContentType
-        arguments: [ %wxr_content.content.class% ]
-
-    wxr_content.content.form.handler:
-        class: WXR\ContentBundle\Form\Handler\ContentHandler
-        scope: request
-        arguments: [ @request, @wxr_content.content.form, @wxr_content.content.manager ]
-
     wxr_content.content.admin:
         class: %wxr_content.content.admin.class%
         arguments: [ ~, %wxr_content.content.class%, SonataAdminBundle:CRUD ]
@@ -39,3 +29,27 @@ services:
                 label: contents
                 label_catalogue: %wxr_content.translation_domain%
                 label_translator_strategy: sonata.admin.label.strategy.underscore
+
+    wxr_content.tag.manager:
+        class: WXR\ContentBundle\Entity\TagManager
+        arguments: [@doctrine.orm.entity_manager, %wxr_content.tag.class%]
+    wxr_content.tag.admin:
+        class: %wxr_content.tag.admin.class%
+        arguments: [ ~, %wxr_content.tag.class%, SonataAdminBundle:CRUD ]
+        calls:
+            - [ setTranslationDomain, [ %wxr_content.translation_domain% ] ]
+        tags:
+            -
+                name: sonata.admin
+                manager_type: orm
+                group: wxr_content
+                label: tags
+                label_catalogue: %wxr_content.translation_domain%
+                label_translator_strategy: sonata.admin.label.strategy.underscore
+
+    wxr_content.twig.extension:
+        class: %wxr_content.twig.extension.class%
+        arguments: [ @wxr_content.content.manager, %wxr_content.twig.extension.default_template%, @service_container ]
+        tags:
+            -
+                name: twig.extension

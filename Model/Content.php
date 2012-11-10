@@ -10,6 +10,11 @@ abstract class Content implements ContentInterface
     protected $id;
 
     /**
+     * @var TagInterface[]
+     */
+    protected $tags;
+
+    /**
      * @var string
      */
     protected $name;
@@ -40,12 +45,37 @@ abstract class Content implements ContentInterface
     protected $updatedAt;
 
 
+    public function __construct()
+    {
+        $this->tags = array();
+        $this->createdAt = new \DateTime();
+        $this->updatedAt = new \DateTime();
+    }
+
     /**
      * {@inheritDoc}
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTags()
+    {
+        return $this->tags;
     }
 
     /**

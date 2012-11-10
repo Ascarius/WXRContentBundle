@@ -1,0 +1,31 @@
+{##
+ # @param WXR\ContentBundle\Model\ContentInterface[] contents
+ #}
+
+{% macro item(content) %}
+        {{ content -}}
+{% endmacro %}
+
+{% macro list(contents) %}
+<ul class="unstyled">
+{% for content in contents %}
+{% if content.title or content.content %}
+    <li>
+{{ _self.item(content) }}
+    </li>
+{% endif %}
+{% endfor %}
+</ul>
+{% endmacro %}
+
+{% if contents is not empty %}
+{% if contents is iterable %}
+{% if 1 == contents|length %}
+{{ _self.item(contents) }}
+{% else %}
+{{ _self.list(contents) }}
+{% endif %}
+{% else %}
+{{ _self.item(contents) }}
+{% endif %}
+{% endif %}

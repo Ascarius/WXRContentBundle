@@ -12,6 +12,21 @@ interface ContentInterface
     public function getId();
 
     /**
+     * Set tags
+     *
+     * @param TagInterface $tags
+     * @return ContentInterface
+     */
+    public function setTags($tags);
+
+    /**
+     * Get tags
+     *
+     * @return TagInterface
+     */
+    public function getTags();
+
+    /**
      * Set name
      *
      * @param string $name

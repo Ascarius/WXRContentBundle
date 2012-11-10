@@ -2,9 +2,12 @@
 
 namespace WXR\ContentBundle\Entity;
 
+use Doctrine\ORM\QueryBuilder;
+
 use WXR\CommonBundle\Entity\BaseManager;
 use WXR\ContentBundle\Model\ContentManagerInterface;
 use WXR\ContentBundle\Model\ContentInterface;
+use WXR\ContentBundle\Model\TagInterface;
 
 class ContentManager extends BaseManager implements ContentManagerInterface
 {
@@ -44,6 +47,57 @@ class ContentManager extends BaseManager implements ContentManagerInterface
         if ($toPersist) {
             $this->persist($toPersist);
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function findByTag(TagInterface $tag, $limit = null, $offset = null)
+    {
+        $now = new \DateTime();
+
+        return $this->findBy(
+            array('tag.id' => $tag->getId()),
+            null,
+            $limit,
+            $offset
+        );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function countByTag(TagInterface $tag)
+    {
+        $now = new \DateTime();
+
+        return $this->countBy(
+            array('tag.id' => $tag->getId())
+        );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSearchableProperties()
+    {
+        return array(
+            $this->alias.'.name',
+            'tag.name',
+            'tag.slug'
+        );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function buildFromClause(QueryBuilder $qb, array $criteria)
+    {
+        parent::buildFromClause($qb, $criteria);
+
+        $qb
+            ->leftJoin($this->alias.'.tags', 'tag')
+        ;
     }
 
     /**

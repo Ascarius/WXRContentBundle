@@ -1,5 +1,6 @@
 wxr_content: Contents
 contents: Contents
+tags: Tags
 
 breadcrumb:
 
@@ -8,10 +9,16 @@ breadcrumb:
     link_content_edit: Edit
     link_content_delete: Delete
 
+    link_tag_list: Tags
+    link_tag_create: Add
+    link_tag_edit: Edit
+    link_tag_delete: Delete
+
 list:
 
     label_name: Name
     label_description: Description
+    label_tags: Tags
 
 filter:
 
@@ -19,10 +26,15 @@ filter:
     label_description: Description
     label_title: Title
     label_content: Content
+    label_tags: Tags
 
 form:
+
+    group_general: General
+    group_tags: Tags
 
     label_name: Name
     label_description: Description
     label_title: Title
     label_content: Content
+    label_tags: Tags

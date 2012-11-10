@@ -18,4 +18,23 @@ interface ContentManagerInterface extends BaseManagerInterface
      * @param array $data
      */
     public function persistFromData(array $data);
+
+    /**
+     * Find by tag
+     *
+     * @param TagInterface $tag
+     * @param integer|null $limit
+     * @param integer|null $offset
+     * @return ContentInterface[]
+     */
+    public function findByTag(TagInterface $tag, $limit = null, $offset = null);
+
+    /**
+     * Count by tag
+     *
+     * @param TagInterface $tag
+     * @return integer
+     */
+    public function countByTag(TagInterface $tag);
+
 }

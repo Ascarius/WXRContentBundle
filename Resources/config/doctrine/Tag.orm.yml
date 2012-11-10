@@ -1,0 +1,6 @@
+WXR\ContentBundle\Entity\Tag:
+    type: entity
+    table: wxr_content_tag
+    uniqueConstraints:
+        UNIQ_slug:
+            columns: [ slug ]
