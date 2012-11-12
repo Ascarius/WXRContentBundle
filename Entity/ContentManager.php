@@ -101,6 +101,18 @@ class ContentManager extends BaseManager implements ContentManagerInterface
     }
 
     /**
+     * {@inheritDoc}
+     */
+    protected function buildOrderClause(QueryBuilder $qb, array $orderBy = null)
+    {
+        if (!$orderBy) {
+            $orderBy = array('name' => 'ASC');
+        }
+
+        parent::buildOrderClause($qb, $orderBy);
+    }
+
+    /**
      * Set content values
      *
      * @param ContentInterface $content
