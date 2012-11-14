@@ -22,7 +22,7 @@ abstract class ContentAdmin extends Admin
                 ->add('title', null, array('required' => false))
                 ->add('content', null, array(
                     'required' => false,
-                    'attr' => array('data-wysiwyg' => true, 'rows' => 10)
+                    'attr' => array('data-wysiwyg' => true, 'rows' => 20)
                 ))
             ->end()
             ->with('form.group_tags')
