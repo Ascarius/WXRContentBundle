@@ -77,7 +77,10 @@ class ContentExtension extends \Twig_Extension
             } elseif (is_string($contents)) {
                 $criteria = array('_search' => $contents);
             } else {
-                throw new \InvalidArgumentException(sprintf('Invalid argument for "contents"; must be ContentInterface|ContentInterface[]|array|string|null; "%s" given'), is_object($contents) ? get_class($contents) : gettype($contents));
+                throw new \InvalidArgumentException(sprintf(
+                    'Invalid argument for "contents"; must be ContentInterface|array|string|null; "%s" given',
+                    is_object($contents) ? get_class($contents) : gettype($contents)
+                ));
             }
 
             $contents = $this->contentManager->findBy($criteria);

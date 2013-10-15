@@ -29,6 +29,5 @@ class WXRContentExtension extends Extension
             'wxr_content.twig.extension.default_template',
             $config['twig']['extension']['default_template']
         );
-
     }
 }
